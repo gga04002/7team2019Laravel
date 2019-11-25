@@ -7,10 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SM_Project') }}</title>
+    <title>{{ config('app.name', 'Seven_Eleven') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @include('sweetalert::alert')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'SM_Project') }}
+                    {{ config('app.name', 'Seven_Eleven') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,17 +36,17 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                             <li class="li-item">
-                                <a href="https://www.daum.net"> 현지 학기제 </a>
+                                <a class="nav-link" href="{{ route('HH') }}">{{ __('현지 학기제') }}</a>
                             </li>
                             <li class="li-item">
-                                <a href="https://www.naver.com"> 조원 소개 </a>
+                                <a class="nav-link" href="{{ route('Introduce') }}">{{ __('조원 소개') }}</a>
                             </li>
                             <li class="li-item">
-                                <a href="https://www.naver.com"> 질의 응답 </a>
+                                <a class="nav-link" href="{{ route('QnA') }}">{{ __('질의 응답') }}</a>
                             </li>
                         @else
                             <li class="li-item">
-                                <a href="https://www.daum.net"> 현지 학기제 </a>
+                                <a class="nav-link" href="{{ route('HH') }}">{{ __('현지 학기제') }}</a>
                             </li>
                         @endif
                         
