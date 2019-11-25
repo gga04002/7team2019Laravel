@@ -11111,3 +11111,8 @@ a.text-dark:focus {
   .li-item a:hover {
     text-decoration: none; 
   }
+
+  .center {
+    text-align: center;
+    
+  }
