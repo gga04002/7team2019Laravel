@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => env('APP_NAME', 'SM_Project'),
+    'name' => env('APP_NAME', 'Seven_Eleven'),
 
 
     'env' => env('APP_ENV', 'production'),

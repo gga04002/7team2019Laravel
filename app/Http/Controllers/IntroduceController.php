@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class QnAController extends Controller
+class IntroduceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,12 @@ class QnAController extends Controller
      */
     public function index()
     {
-
-        return view('qna.index');
-
+        if( auth()->check() ){
+            return view('Introduce');
+        }
+        else{
+            return view('mainpage');
+        }
     }
 
     /**
@@ -25,9 +28,7 @@ class QnAController extends Controller
      */
     public function create()
     {
-
-        return view('qna.create');
-
+        //
     }
 
     /**

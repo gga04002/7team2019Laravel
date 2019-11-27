@@ -26,8 +26,10 @@ Route::get('/', function () {
 
 Route::get('/logged', 'LoggedController@index')->name('logged');
 
+
 Route::resource('/galleries', 'GalleriesController');
 
 Route::resource('/group', 'GroupController');
 
 Route::resource('/qna', 'QnAController');
+

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
-class QnAController extends Controller
+class HHController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,7 @@ class QnAController extends Controller
      */
     public function index()
     {
-
-        return view('qna.index');
-
+        return view('HH');
     }
 
     /**
@@ -25,9 +24,7 @@ class QnAController extends Controller
      */
     public function create()
     {
-
-        return view('qna.create');
-
+        //
     }
 
     /**
