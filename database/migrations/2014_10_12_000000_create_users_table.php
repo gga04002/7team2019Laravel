@@ -13,12 +13,16 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        // id, email, password, name, admin
         Schema::create('users', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('name', 10);
+            $table->string('email', 255)->unique();
+            // $table->timestamp('email_verified_at')->nullable();
+            $table->string('password', 60);
+            $table->boolean('admin')->default(false)->unique();
             $table->rememberToken();
             $table->timestamps();
         });
