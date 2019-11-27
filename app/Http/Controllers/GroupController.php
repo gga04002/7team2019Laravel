@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class QnAController extends Controller
+class GroupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,7 @@ class QnAController extends Controller
      */
     public function index()
     {
-
-        return view('qna.index');
-
+        return view('group.index');
     }
 
     /**
@@ -25,9 +23,7 @@ class QnAController extends Controller
      */
     public function create()
     {
-
-        return view('qna.create');
-
+        return view('group.create');
     }
 
     /**

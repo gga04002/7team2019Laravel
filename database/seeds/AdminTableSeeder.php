@@ -12,8 +12,8 @@ class AdminTableSeeder extends Seeder
     public function run()
     {
         App\Admin::create([
-            'name' => 'SM_ADMIN',
-            'email' => 'sm@naver.com'
+            'name' => 'ADMIN',
+            'email' => 'root@php.com'
         ]);
     }
 }
