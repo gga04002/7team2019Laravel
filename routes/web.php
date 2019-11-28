@@ -1,5 +1,15 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
 
 Auth::routes();
@@ -16,7 +26,10 @@ Route::get('/', function () {
 
 Route::get('/logged', 'LoggedController@index')->name('logged');
 
-//헤더부분에서 필요
-Route::get('/HH', 'HHController@index')->name('HH');
-Route::get('/Introduce', 'IntroduceController@index')->name('Introduce');
-Route::get('/QnA', 'QnAController@index')->name('QnA');
+
+Route::resource('/galleries', 'GalleriesController');
+
+Route::resource('/group', 'GroupController');
+
+Route::resource('/qna', 'QnAController');
+
