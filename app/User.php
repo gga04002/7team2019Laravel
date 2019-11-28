@@ -41,19 +41,5 @@ class User extends Authenticatable
         return $this->has(Admin::class);
     }
 
-    public function member() {
-        return $this->hasOne(Member::class, 'admin');
-    }
-    
-    public function japan() {
-        return $this->has(Japan::class);
-    }
-
-    public function question() {
-        return $this->has(Question::class);
-    }
-
-    public function answer() {
-        return $this->has(Answer::class);
-    }
+    // 2019-11-28 member, japan, question, answer 관계 삭제
 }

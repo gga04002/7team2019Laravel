@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     protected $fillable = [
-        'user_email', 'user_name', 'admin', 'address', 'phone_number', 'mottoes'
+        'address', 'phone_number', 'mottoes'
     ];
 
-    public function user() {
-        return $this->belongsTo(User::class);
-    }
+    // 2019-11-28 User와의 관계 삭제
 }
