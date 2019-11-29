@@ -13,12 +13,9 @@ class QnAController extends Controller
      */
     public function index()
     {
-        if( auth()->check() ){
-            return view('QnA');
-        }
-        else{
-            return view('mainpage');
-        }
+
+        return view('qna.index');
+
     }
 
     /**
@@ -28,7 +25,9 @@ class QnAController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('qna.create');
+
     }
 
     /**

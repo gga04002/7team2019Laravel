@@ -7,7 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Seven_Eleven') }}</title>
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,7 +27,9 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Seven_Eleven') }}
+
+                    {{ config('app.name', 'Laravel') }}
+
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -36,17 +40,19 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                             <li class="li-item">
-                                <a class="nav-link" href="{{ route('HH') }}">{{ __('현지 학기제') }}</a>
+
+                                <a class="nav-link" href="{{ route('galleries.index') }}"> 현지 학기제 </a>
                             </li>
                             <li class="li-item">
-                                <a class="nav-link" href="{{ route('Introduce') }}">{{ __('조원 소개') }}</a>
+                                <a class="nav-link" href="{{ route('group.index') }}"> 조원 소개 </a>
                             </li>
                             <li class="li-item">
-                                <a class="nav-link" href="{{ route('QnA') }}">{{ __('질의 응답') }}</a>
+                                <a class="nav-link" href="{{ route('qna.index') }}"> 질의 응답 </a>
                             </li>
                         @else
                             <li class="li-item">
-                                <a class="nav-link" href="{{ route('HH') }}">{{ __('현지 학기제') }}</a>
+                                <a class="nav-link" href="{{ route('galleries.index') }}"> 현지 학기제 </a>
+
                             </li>
                         @endif
                         
@@ -57,6 +63,8 @@
                         <!-- Authentication Links -->
                         @guest  <!-- 인증(Authenticate)되지 않은 사용자 -->
                             <li class="nav-item">
+                            <!-- {{__('string')}} : 지역화(다국어) -->
+                            <!--https://laravel.kr/docs/6.x/localization#%EC%A7%80%EC%97%AD%ED%99%94%20(%EB%8B%A4%EA%B5%AD%EC%96%B4) ckawh -->
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
@@ -88,7 +96,8 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        {{-- p.112 참조 --}}
+        <main class="py-4 container">
             @yield('content')
         </main>
     </div>

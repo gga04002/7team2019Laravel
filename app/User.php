@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'admin'
     ];
 
     /**
@@ -41,4 +41,19 @@ class User extends Authenticatable
         return $this->has(Admin::class);
     }
 
+    public function member() {
+        return $this->hasOne(Member::class, 'admin');
+    }
+    
+    public function japan() {
+        return $this->has(Japan::class);
+    }
+
+    public function question() {
+        return $this->has(Question::class);
+    }
+
+    public function answer() {
+        return $this->has(Answer::class);
+    }
 }
