@@ -19,6 +19,9 @@ class CreateAnswersTable extends Migration
 
             $table->bigIncrements('id');
             $table->integer('a_id')->unsigned()->index();
+            // 2019-11-28 응답 제목, 내용 추가
+            $table->string('title', 255);
+            $table->text('content');
             
             $table->timestamps();            
 
