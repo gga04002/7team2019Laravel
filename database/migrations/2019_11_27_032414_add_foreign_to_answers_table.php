@@ -14,10 +14,8 @@ class AddForeignToAnswersTable extends Migration
     public function up()
     {
         Schema::table('answers', function (Blueprint $table) {
-            $table->boolean('admin')->default(false)->unique();
             $table->integer('target_id')->unsigned()->index()->unique();
 
-            $table->foreign('admin')->references('admin')->on('users')->onDelete('cascade');
             $table->foreign('target_id')->references('q_id')->on('questions')->onDelete('cascade');
 
         });

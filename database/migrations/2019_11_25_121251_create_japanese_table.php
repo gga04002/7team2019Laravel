@@ -15,7 +15,7 @@ class CreateJapaneseTable extends Migration
     {
         // img, place, explain, created_at, updated_at
         Schema::create('japanese', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+            //$table->engine = 'InnoDB';
 
             $table->bigIncrements('id');
             $table->string('img', 255);

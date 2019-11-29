@@ -10,7 +10,8 @@ class Member extends Model
         'user_email', 'user_name', 'admin', 'address', 'phone_number', 'mottoes'
     ];
 
+    // User와 Member는 1:1 관계
     public function user() {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class);
     }
 }

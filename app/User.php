@@ -36,24 +36,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    // $casts : 모델에서 데이터 조회 시 자동으로 타입 변환(캐스팅)할 목록
 
     public function admin(){
-        return $this->has(Admin::class);
+        return $this->hasOne(Admin::class);
+        // 1:1 => hasOne()
+        // 1:n => 1: hasMany(), n: belongsTo()
+        // n:n => belongsToMany()
     }
 
+    // User모델에서 member() 라는 메서드를 썼다 == Member모델과 관계가 있다
+    // == 누구 한 놈이 다른 한놈을 참조하는 외래키를 가지고 있다
+    // users테이블 <--참조-- members테이블
+    // members테이블에 user_id라는 외래키가 존재하게 됨
     public function member() {
-        return $this->hasOne(Member::class, 'admin');
-    }
-    
-    public function japan() {
-        return $this->has(Japan::class);
+        return $this->hasOne(Member::class);
     }
 
     public function question() {
-        return $this->has(Question::class);
+        return $this->hasMany(Question::class);
     }
 
     public function answer() {
-        return $this->has(Answer::class);
+        return $this->hasMany(Answer::class);
     }
 }

@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
 
-    protected $guard = 'admin';
+    protected $guarded = 'admin';
+    // $guard가 아니고 $guarded
+    // MassAssignment(대량할당)을 막기 위한 방법 두가지
+    // 1) $fillable => 허용목록(whitelist)
+    // 2) $guarded  => 금지목록(blacklist)
 
     /**
      * The attributes that are mass assignable.
