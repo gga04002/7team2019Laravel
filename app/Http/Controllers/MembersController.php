@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class GroupController extends Controller
+class MembersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        return view('group.index');
+        return view('members.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('group.create');
+        return view('members.create');
     }
 
     /**
