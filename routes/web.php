@@ -16,11 +16,12 @@ Auth::routes();
 
 
 Route::resource('/', 'MainpageController');
+
 Route::get('/', 'MainpageController@index')->name('Mainpage');
 
-Route::resource('/galleries', 'GalleriesController');
+Route::resource('/japan', 'JapanController');
 
-Route::resource('/group', 'GroupController');
+Route::resource('/members', 'MembersController');
 
 Route::resource('/qna', 'QnAController');
 

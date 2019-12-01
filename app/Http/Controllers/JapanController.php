@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class IntroduceController extends Controller
+class JapanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,12 +13,7 @@ class IntroduceController extends Controller
      */
     public function index()
     {
-        if( auth()->check() ){
-            return view('Introduce');
-        }
-        else{
-            return view('mainpage');
-        }
+        return view('japan.index');
     }
 
     /**
@@ -28,7 +23,7 @@ class IntroduceController extends Controller
      */
     public function create()
     {
-        //
+        return view('japan.create');
     }
 
     /**
