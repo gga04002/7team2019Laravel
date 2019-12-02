@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        // admin 계정 시더
+        // admin 유저 시더
         App\User::create([
             'name' => 'ADMIN',
             'email' => 'root@php.com',
@@ -19,7 +19,8 @@ class UsersTableSeeder extends Seeder
             'admin'=>1,
         ]);
 
-        // factory(App\User::class)->
+        // 일반사용자 시더
+        factory(App\User::class)->create(['email'=>'user@php.com']);
 
     }
 }
