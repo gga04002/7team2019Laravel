@@ -11,15 +11,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        // admin 계정 시더
         App\User::create([
             'name' => 'ADMIN',
             'email' => 'root@php.com',
             'password' => bcrypt('password'),
+            'admin'=>1,
         ]);
 
-        App\Admin::create([
-            'name' => 'ADMIN',
-            'email' => 'root@php.com',
-        ]);
+        // factory(App\User::class)->
+
     }
 }

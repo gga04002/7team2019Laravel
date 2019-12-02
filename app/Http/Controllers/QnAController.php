@@ -14,7 +14,8 @@ class QnAController extends Controller
     public function index()
     {
 
-        return view('qna.index');
+        $questions = \App\Question::get();
+        return view('qna.index', compact('questions'));
 
     }
 
