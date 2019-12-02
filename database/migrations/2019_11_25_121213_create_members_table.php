@@ -16,7 +16,6 @@ class CreateMembersTable extends Migration
         // user_mail, user_name, admin, address, phone_number, mottoes, created_at, updated_at
         Schema::create('members', function (Blueprint $table) {
             //$table->engine = 'InnoDB';
-
             $table->bigIncrements('id');
             $table->string('address', 255);
             $table->string('phone_number', 13);

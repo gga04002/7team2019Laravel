@@ -14,27 +14,13 @@
 
 Auth::routes();
 
+// 메인페이지에 CRUD 안할거니까 리소스 컨트롤러 삭제함
+//Route::resource('/', 'MainpageController');
 
-Route::resource('/', 'MainpageController');
-
-Route::get('/', 'MainpageController@index')->name('Mainpage');
+Route::get('/', 'MainController@index')->name('Mainpage');
 
 Route::resource('/japan', 'JapanController');
 
 Route::resource('/members', 'MembersController');
 
 Route::resource('/qna', 'QnAController');
-
-/*
-
-Route::get('/', function () {
-    if( auth()->check() ){
-        $email = auth()->user()->email; 
-        return view('mainpage', [ 'email' => $email ]);
-    }
-    else{
-        return view('mainpage', [ 'email' => '-' ]);
-    }
-});
-
-*/
