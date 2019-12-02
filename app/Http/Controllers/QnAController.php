@@ -14,7 +14,8 @@ class QnAController extends Controller
     public function index()
     {
 
-        $questions = \App\Question::get();
+        $questions = \App\Question::with('user')->latest()->paginate(10);
+        
         return view('qna.index', compact('questions'));
 
     }
@@ -26,9 +27,7 @@ class QnAController extends Controller
      */
     public function create()
     {
-
         return view('qna.create');
-
     }
 
     /**
@@ -39,7 +38,26 @@ class QnAController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $rules = [
+            'title' => ['required'],
+            'content' => ['required', 'min:10'],
+        ];
+        
+        $validator = \Validator::make($request->all(), $rules);
+
+        if($validator->fails()) {
+            return back()->withError($validator)->withInput();
+        }
+
+        $question = \App\User::find(1)->questions()->create($request->all());
+
+        if(! $question) {
+            return back()->with('flash_message', '글이 저장되지 않았습니다')->withInput();
+        }
+
+        return redirect(route('qna.index'))->with('flash_message', '작성하신 글이 저장되었습니다');
+
     }
 
     /**

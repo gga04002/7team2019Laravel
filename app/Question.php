@@ -10,6 +10,10 @@ class Question extends Model
         'q_id', 'title', 'content'
     ];
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
     public function answer() {
         // answer과 1:1 관계
         return $this->belongsTo(Answer::class);

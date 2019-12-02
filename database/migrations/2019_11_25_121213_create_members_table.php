@@ -21,8 +21,6 @@ class CreateMembersTable extends Migration
             $table->string('phone_number', 13);
             $table->text('mottoes');
             $table->string('img', 255);
-            
-
             $table->timestamps();
 
         });

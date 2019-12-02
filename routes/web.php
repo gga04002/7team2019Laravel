@@ -24,4 +24,3 @@ Route::resource('/japan', 'JapanController');
 Route::resource('/members', 'MembersController');
 
 Route::resource('/qna', 'QnAController');
-

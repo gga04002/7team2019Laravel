@@ -53,11 +53,11 @@ class User extends Authenticatable
         return $this->hasOne(Member::class);
     }
 
-    public function question() {
+    public function questions() {
         return $this->hasMany(Question::class);
     }
 
-    public function answer() {
+    public function answers() {
         return $this->hasMany(Answer::class);
     }
 }
