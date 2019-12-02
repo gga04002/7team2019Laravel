@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Http\Requests\QuestionsRequest;
 
 class QnAController extends Controller
 {
@@ -74,7 +73,7 @@ class QnAController extends Controller
     }
     */
 
-    public function store(QuestionsRequest $request){
+    public function store(\App\Http\Requests\QuestionsRequest $request){
       $question = \App\User::find(1)->questions()->create($request->all());
 
       if(! $question){
