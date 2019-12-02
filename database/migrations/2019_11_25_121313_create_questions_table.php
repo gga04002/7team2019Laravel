@@ -18,7 +18,7 @@ class CreateQuestionsTable extends Migration
             $table->engine = 'InnoDB';
 
             $table->bigIncrements('id');
-            $table->integer('q_id')->unsigned()->index()->unique();
+            $table->integer('q_id')->unsigned()->index();
             $table->string('title', 255);
             $table->text('content');
 

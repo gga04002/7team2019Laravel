@@ -14,13 +14,31 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/main_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/responsive.css') }}">
-
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	
+	<!-- Select CSS -->
+	@if( 	str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000' ||
+			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/login' ||
+			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/register' ||
+			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/password/reset' )
+		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/main_styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/responsive.css') }}">
+	@elseif( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/japan' )
+		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about_responsive.css') }}">
+	@elseif( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/members' )
+		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about_responsive.css') }}">
+	@elseif( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/qna' )
+		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/contact.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/contact_responsive.css') }}">
+	
+	
+	@endif
 
-<script src="{{ asset('js/app.js') }}" defer></script>
+
+
     @include('sweetalert::alert')
 </head>
 <body>
@@ -53,12 +71,30 @@
 			</div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-                    <li class="active"><a href="{{ route('Mainpage') }}">Home</a></li>
-                    <li><a href="{{ route('japan.index')}}">현지 학기제</a></li>
-                    @auth
-					    <li><a href="{{ route('members.index') }}">조원 소개</a></li>
-                        <li><a href="{{ route('qna.index') }}">QnA</a></li>
-                    @endauth
+						<!-- Select Active-->
+						@if( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000' )
+						<li class="active"><a href="{{ route('Mainpage') }}">Home</a></li>
+						@else
+						<li ><a href="{{ route('Mainpage') }}">Home</a></li>
+						@endif
+
+						@if( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/japan' )
+							<li class="active"><a href="{{ route('japan.index')}}">현지 학기제</a></li>
+						@else
+							<li><a href="{{ route('japan.index')}}">현지 학기제</a></li>
+						@endif
+						
+						@if( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/members' )
+							<li class="active"><a href="{{ route('members.index') }}">조원 소개</a></li>
+						@else
+							<li><a href="{{ route('members.index') }}">조원 소개</a></li>
+						@endif
+
+						@if( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/qna' )
+							<li class="active"><a href="{{ route('qna.index') }}">QnA</a></li>
+						@else
+							<li><a href="{{ route('qna.index') }}">QnA</a></li>
+						@endif
 				</ul>
 			</nav>
 			<div class="hamburger ml-auto">
@@ -73,4 +109,3 @@
 	</header>
     
 </div>
-@yield('content')
