@@ -14,10 +14,10 @@ class AddForeignToQuestionsTable extends Migration
     public function up()
     {
         Schema::table('questions', function (Blueprint $table) {
-            $table->boolean('admin')->default(false)->unique();
+            // $table->boolean('admin')->default(false)->unique();
             $table->string('user_email', 255)->unique();
 
-            $table->foreign('admin')->references('admin')->on('users')->onDelete('cascade');
+            // $table->foreign('admin')->references('admin')->on('users')->onDelete('cascade');
             $table->foreign('user_email')->references('email')->on('users')->onDelete('cascade');
         });
     }
