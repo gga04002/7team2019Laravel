@@ -22,9 +22,6 @@ class CreateMembersTable extends Migration
             $table->string('phone_number', 13);
             $table->text('mottoes');
             $table->string('img', 255);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete(cascade);
-            //onDelete(cascade) : cascade는 '종속'이라는 뜻. 즉 참조하고있는 users테이블 데이터가 삭제되면 해당 member도 삭제 된다는 뜻
-
             $table->timestamps();
 
         });

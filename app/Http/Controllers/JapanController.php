@@ -34,7 +34,14 @@ class JapanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->hasFile('files')) {
+            $files = $request->file('files');
+
+            foreach($files as $file) {
+                $filename = str_random().filter_var($file->getClientOriginalName(), FILTER_SANITIZE_URL);
+                $file = move(attachments_path(), $filename);
+            }
+        }
     }
 
     /**

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form action="route('store')" method="POST">
+    <form action="{{ route('japan.store') }}" method="POST" >
         {!! csrf_field() !!}
 
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
