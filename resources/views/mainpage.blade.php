@@ -15,7 +15,7 @@
 						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
 							<div class="home_content text-center">
 								<div class="home_subtitle">New single release</div>
-								<div class="home_title"><h1>Love is all around</h1></div>
+								<div class="home_title"><h1>First Song</h1></div>
 								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
 							</div>
 						</div>
@@ -29,7 +29,7 @@
 						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
 							<div class="home_content text-center">
 								<div class="home_subtitle">New single release</div>
-								<div class="home_title"><h1>Love is all around</h1></div>
+								<div class="home_title"><h1>Second Song</h1></div>
 								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
 							</div>
 						</div>
@@ -43,7 +43,7 @@
 						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
 							<div class="home_content text-center">
 								<div class="home_subtitle">New single release</div>
-								<div class="home_title"><h1>Love is all around</h1></div>
+								<div class="home_title"><h1>Third Song</h1></div>
 								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
 							</div>
 						</div>
@@ -55,7 +55,7 @@
 	</div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap-4.1.2/popper.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
 <script src="plugins/greensock/TweenMax.min.js"></script>
 <script src="plugins/greensock/TimelineMax.min.js"></script>

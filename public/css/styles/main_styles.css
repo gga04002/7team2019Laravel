@@ -1438,3 +1438,9 @@ section
 	color: #6d6d6d;
 	line-height: 67px;
 }
+
+.ddd_test_center {
+    margin-top: 20%;
+	text-align: center;
+	color: #ffffff;
+  }
