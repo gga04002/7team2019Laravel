@@ -1,6 +1,4 @@
-@extends('../layouts.app')
-
-@section('content')
+@extends('headers.header')
 
     <form action="{{ route('members.store') }}" method="POST">
         {!! csrf_field() !!}
@@ -28,6 +26,3 @@
         </div>
 
     </form>
-
-
-@stop

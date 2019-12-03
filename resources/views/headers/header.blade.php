@@ -21,7 +21,10 @@
 	@if( 	str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000' ||
 			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/login' ||
 			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/register' ||
-			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/password/reset' )
+			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/password/reset' ||
+			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/members/create' ||
+			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/japan/create' ||
+			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/qna/create')
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/main_styles.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/responsive.css') }}">
 	@elseif( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/japan' )

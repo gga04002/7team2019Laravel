@@ -1,13 +1,11 @@
-@extends('../layouts.app')
-
-@section('content')
+@extends('headers.header')
 
     <div class="container">
         <h1>조원 추가</h1>
 
         <hr/>
 
-        <form action="{{ route('members.store') }}" method="POST">
+        <form class="member_form" action="{{ route('members.store') }}" method="POST">
             {!! csrf_field() !!}
 
             <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
@@ -36,7 +34,7 @@
 
             <div class="form-group {{ $errors->has('mottoes') ? 'has-error' : '' }}">
                 <label for="contentLabel">하고 싶은 말 : </label>
-                <textarea name="mottoes" id="mottoes" rows="10" class="form-control">{{ old('mottoes') }}</textarea>
+                <textarea name="mottoes" id="mottoes" rows="5" class="form-control">{{ old('mottoes') }}</textarea>
                 {!! $errors->first('mottoes', '<span class="form-error">:message</span>') !!}
             </div>
 
@@ -44,11 +42,8 @@
                 <button type="submit" class="btn btn-primary">저장하기</button>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary"><a href="{{ route('members.index') }}">취소</a></button>
+                <a class="button3" onclick="window.history.back()">취소</button>
             </div>
 
         </form>
     </div>
-
-
-@stop
