@@ -9,10 +9,10 @@ body {
 #container-login {
     background-color: #1D1F20;
     position: relative;
-    top: 50%;
+    top: 30%;
     margin: auto;
     width: 340px;
-    height: 80%;
+    height: 60%;
     border-radius: 0.35em;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -68,8 +68,9 @@ input[type=checkbox] {
 }
 
 input[type=text] {
+    width: 180px;
     color: #949494;
-    margin: 0;
+    margin: auto;
     background-color: #373b3d;
     border: 1px solid #373b3d;
     padding: 6px 0px;
@@ -78,11 +79,13 @@ input[type=text] {
 
 input[type=text]:focus {
     border: 1px solid #373b3d;
+    background-color: #222222;
 }
 
 input[type=password] {
+    width: 180px;
     color: #949494;
-    margin: 0;
+    margin: auto;
     background-color: #373b3d;
     border: 1px solid #373b3d;
     padding: 6px 0px;
@@ -91,11 +94,13 @@ input[type=password] {
 
 input[type=password]:focus {
     border: 1px solid #373b3d;
+    background-color: #222222;
 }
 
 input[type=email] {
+    width: 180px;
     color: #949494;
-    margin: 0;
+    margin: auto;
     background-color: #373b3d;
     border: 1px solid #373b3d;
     padding: 6px 0px;
@@ -104,6 +109,7 @@ input[type=email] {
 
 input[type=email]:focus {
     border: 1px solid #373b3d;
+    background-color: #222222;
 }
 
 .forgot-password {
@@ -153,7 +159,7 @@ input[type=email]:focus {
 }
 
 .remember-me {
-    margin: 10px 0;
+    margin: auto;
 }
 
 input[type=submit] {
