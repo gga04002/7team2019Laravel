@@ -1,5 +1,6 @@
 @extends ('headers.header')
 
+@section('content')
 <!-- Contact -->
 	
 <div class="contact">
