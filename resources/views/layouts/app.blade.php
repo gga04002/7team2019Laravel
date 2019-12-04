@@ -38,21 +38,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="li-item">
+                            <a class="nav-link" href="{{ route('japan.index') }}"> 현지 학기제 </a>
+                        </li>
                         @auth
                             <li class="li-item">
-
-                                <a class="nav-link" href="{{ route('galleries.index') }}"> 현지 학기제 </a>
-                            </li>
-                            <li class="li-item">
-                                <a class="nav-link" href="{{ route('group.index') }}"> 조원 소개 </a>
+                                <a class="nav-link" href="{{ route('members.index') }}"> 조원 소개 </a>
                             </li>
                             <li class="li-item">
                                 <a class="nav-link" href="{{ route('qna.index') }}"> 질의 응답 </a>
-                            </li>
-                        @else
-                            <li class="li-item">
-                                <a class="nav-link" href="{{ route('galleries.index') }}"> 현지 학기제 </a>
-
                             </li>
                         @endif
                         
@@ -96,7 +90,12 @@
             </div>
         </nav>
 
-        {{-- p.112 참조 --}}
+        @if(session()->has('flash_message'))
+        <div class="alert alert-info" role="alert">
+          {{ session('flash_message') }}
+        </div>
+        @endif
+        
         <main class="py-4 container">
             @yield('content')
         </main>

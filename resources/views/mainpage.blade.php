@@ -1,98 +1,73 @@
+@extends ('headers.header')
 
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Home -->
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+	<div class="home">
+		<div class="home_slider_container">
+			
+			<!-- Home Slider -->
+			<div class="owl-carousel owl-theme home_slider">
+				
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url(images/index.jpg)"></div>
+					<div class="home_container">
+						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
+							<div class="home_content text-center">
+								<div class="home_subtitle">New single release</div>
+								<div class="home_title"><h1>First Song</h1></div>
+								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url(images/index.jpg)"></div>
+					<div class="home_container">
+						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
+							<div class="home_content text-center">
+								<div class="home_subtitle">New single release</div>
+								<div class="home_title"><h1>Second Song</h1></div>
+								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url(images/index.jpg)"></div>
+					<div class="home_container">
+						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
+							<div class="home_content text-center">
+								<div class="home_subtitle">New single release</div>
+								<div class="home_title"><h1>Third Song</h1></div>
+								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+			</div>
+		</div>
+	</div>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        @auth
-                            <li class="li-item">
-                                <a class="nav-link" href="{{ route('galleries.index') }}"> 현지 학기제 </a>
-                            </li>
-                            <li class="li-item">
-                                <a class="nav-link" href="{{ route('group.index') }}"> 조원 소개 </a>
-                            </li>
-                            <li class="li-item">
-                                <a class="nav-link" href="{{ route('qna.index') }}"> 질의 응답 </a>
-                            </li>
-                        @else
-                            <li class="li-item">
-                                <a class="nav-link" href="{{ route('galleries.index') }}"> 현지 학기제 </a>
-                            </li>
-                        @endif
-                        
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest  <!-- 인증(Authenticate)되지 않은 사용자 -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        {{-- p.112 참조 --}}
-        <main class="py-4 container">
-            @yield('content')
-        </main>
-    </div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/progressbar/progressbar.min.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="plugins/jPlayer/jquery.jplayer.min.js"></script>
+<script src="plugins/jPlayer/jplayer.playlist.min.js"></script>
+<script src="js/custom.js"></script>
 </body>
-
 </html>

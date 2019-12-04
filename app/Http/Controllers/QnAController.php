@@ -14,7 +14,9 @@ class QnAController extends Controller
     public function index()
     {
 
-        return view('qna.index');
+        $questions = \App\Question::with('user')->latest()->paginate(10);
+        
+        return view('qna.index', compact('questions'));
 
     }
 
@@ -25,9 +27,7 @@ class QnAController extends Controller
      */
     public function create()
     {
-
         return view('qna.create');
-
     }
 
     /**
@@ -36,9 +36,51 @@ class QnAController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    /*
     public function store(Request $request)
     {
+        // 사용자입력값에 대한 유효성 검사 규칙
+        $rules = [
+            'title' => ['required'],
+            'content' => ['required', 'min:10'],
+        ];
+        
+        // 오류메시지 커스터마이징
+        $messages = [
+          'title.required' => '제목은 필수 입력 항목입니다.',
+          'content.required' => '본문은 필수 입력 항목입니다.',
+          'content.min' => '본문은 최소 :min 글자 이상 필요합니다.',
+        ];
+
         //
+        //   $validator = \Validator::make($request->all(), $rules, $messages);
+
+        //   if($validator->fails()) {
+        //       return back()->withError($validator)->withInput();
+        //   }
+        //
+        // 트레이트의 메서드 validate() == (유효성검사기만들기 + 유효성검사 통과못할 시 오류메시지 세션에저장 + 이전페이지로 돌려보내기)
+        $this->validate($request, $rules, $messages);
+        $question = \App\User::find(1)->questions()->create($request->all());
+
+        if(! $question) {
+            return back()->with('flash_message', '글이 저장되지 않았습니다')->withInput();
+        }
+
+        return redirect(route('qna.index'))->with('flash_message', '작성하신 글이 저장되었습니다');
+
+    }
+    */
+
+    public function store(\App\Http\Requests\QuestionsRequest $request){
+      $question = \App\User::find(1)->questions()->create($request->all());
+
+      if(! $question){
+        return back()->withErrors('flash_message', '글이 저장되지 않았습니다.')->withInput();
+      }
+
+      return redirect(route('qna.index'))->with('flash_message', '작성한 글이 저장되었습니다.');
     }
 
     /**
