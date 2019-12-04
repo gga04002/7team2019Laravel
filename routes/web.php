@@ -24,3 +24,9 @@ Route::resource('/japan', 'JapanController');
 Route::resource('/members', 'MembersController');
 
 Route::resource('/qna', 'QnAController');
+
+/* Social Login */
+Route::get('social/{provider}', [
+    'as' => 'social.login',
+    'uses' => 'SocialController@execute',
+]);
