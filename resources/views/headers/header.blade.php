@@ -32,14 +32,15 @@
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about_responsive.css') }}">
 	@elseif( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/qna' )
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/contact.css') }}">
-		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/contact_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/contact_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 	
 	
 	@endif
 
 
 
-    @include('sweetalert::alert')
+  @include('sweetalert::alert')
 </head>
 <body>
 
@@ -98,7 +99,7 @@
 				</ul>
 			</nav>
 			<div class="hamburger ml-auto">
-				<div class="d-flex flex-column align-items-end justify-content-between">
+				<!-- <div class="d-flex flex-column align-items-end justify-content-between"> -->
 					<div></div>
 					<div></div>
 					<div></div>
@@ -110,3 +111,4 @@
     
 </div>
 @yield('content')
+@yield('script')
