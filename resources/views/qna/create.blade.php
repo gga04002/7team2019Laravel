@@ -1,9 +1,13 @@
-@extends('../layouts/app')
+@extends('headers.header')
 
+<!--
 @section('content')
 
     <form action="{{ route('qna.store')}}" method="POST">
         @csrf
+-->
+    <form class="member_form" action="{{ route('qna.store')}}" method="POST">
+        {!! csrf_field() !!}
 
         <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
             <label for="title">제목 : </label>
@@ -22,6 +26,3 @@
         </div>
 
     </form>
-
-
-@stop

@@ -10,27 +10,31 @@
 <meta name="description" content="Mixtape template project">
 
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	
 	<!-- Select CSS -->
-	@if( 	str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000' ||
-			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/login' ||
-			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/register' ||
-			str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/password/reset' )
+	@if( 	Request::url() == 'http://127.0.0.1:8000' ||
+			Request::url() == 'http://127.0.0.1:8000/login' ||
+			Request::url() == 'http://127.0.0.1:8000/register' ||
+			Request::url() == 'http://127.0.0.1:8000/password/reset' ||
+			Request::url() == 'http://127.0.0.1:8000/members/create' ||
+			Request::url() == 'http://127.0.0.1:8000/japan/create' ||
+			Request::url() == 'http://127.0.0.1:8000/qna/create')
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/main_styles.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/responsive.css') }}">
-	@elseif( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/japan' )
+	@elseif( Request::url() == 'http://127.0.0.1:8000/japan' )
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about_responsive.css') }}">
-	@elseif( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/members' )
+	@elseif( Request::url() == 'http://127.0.0.1:8000/members' )
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/about_responsive.css') }}">
-	@elseif( str_replace('http://', 'https://', Request::url()) == 'https://127.0.0.1:8000/qna' )
+	@elseif( Request::url() == 'http://127.0.0.1:8000/qna' )
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/contact.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/contact_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
@@ -98,13 +102,7 @@
 						@endif
 				</ul>
 			</nav>
-			<div class="hamburger ml-auto">
-				<!-- <div class="d-flex flex-column align-items-end justify-content-between"> -->
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-			</div>
+			
 		</div>
 		
 	</header>
