@@ -36,7 +36,7 @@
   <ul>
       @forelse($questions as $question)
         <li>
-          <a data-id="{{ $question->id }}" class="choose-question" href="#" style="color: #FFFFFF;"> {{ $question->title }} </a>
+          <a data-id="{{ $question->id }}" class="choose_question" href="#" style="color: #FFFFFF;"> {{ $question->title }} </a>
           <small style="color: #FFFFFF;"> by {{ $question->user->name }} </small>
         </li>
       @empty
@@ -62,7 +62,8 @@ $(document).ready(function(){
     }
   });
 
-  $('.choose-question').click(function(e){
+// 글 보기 (show)
+  $('.choose_question').click(function(e){
     if(confirm('ajax로 글 보기')){
 
       var title = '{{ $question->title }}';
@@ -80,6 +81,15 @@ $(document).ready(function(){
         error: function(data, textStatus, errorThrown){
           console.log('data');
         }
+      });
+    }
+  });
+
+// 글 작성 (create)
+  $('.contact_button').click(function(e){
+    if (confirm('ajax로 새 글 작성하기')){
+      $.ajax({
+        type: 'get'
       });
     }
   });
