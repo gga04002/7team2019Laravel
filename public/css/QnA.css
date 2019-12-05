@@ -59,7 +59,7 @@
  }
  
  /* Background-color of the odd rows */
- #title {
+ .title {
        background-color: #323C50;
  }
  
@@ -74,7 +74,7 @@
  
  .table-container td:first-child { color: #FB667A; }
  
-#title:hover {
+.title:hover {
       background-color: #323C50;
       color: #DDDDDD;
       font-weight: bold;
@@ -88,7 +88,7 @@
       transition-timing-function: line;
     }
 
-#content:hover {
+.content:hover {
    background-color: #2C3446;
    color: #DDDDDD;
    font-weight: bold;
@@ -102,7 +102,7 @@
    transition-timing-function: line;
  }
 
- #title:active {
+ .title:active {
       background-color: #1565c0;
       color: #DDDDDD;
       font-weight: bold;
@@ -116,7 +116,7 @@
       transition-timing-function: line;
     }
 
- #content:active {
+ .content:active {
    background-color: #0d47a1;
    color: #DDDDDD;
    font-weight: bold;
@@ -150,18 +150,12 @@
        background-color: #0d47a1;
  }
 
- #answerValue {
-       resize: none;
-       font-size: 30px;
-       min-height: 100px;
- }
- 
- #comment_p {
-       display: inline;
- }
-
  .Align_Center {
       top: 20%;
       margin: auto;
       text-align: center;
  }
+
+ [data-toggle="toggle"] {
+	display: none;
+}

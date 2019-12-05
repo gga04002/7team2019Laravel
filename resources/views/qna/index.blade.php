@@ -2,6 +2,14 @@
 
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/QnA.css') }}">
 
+<div>
+	@auth
+		<input class="useradmininput" type="hidden" value="{{ Auth::user()->admin }}">
+	@else
+		<input class="useradmininput" type="hidden" value="0">
+	@endauth
+</div>
+
 <div class="Align_Center">
 		<button id="btn">Create Question</button>
 </div>
@@ -17,9 +25,8 @@
 			</tr>
 		</thead>
 		@foreach ($questions as $question)
-			<tbody>
+			<tbody id="{{ $question->id }}">
 				<tr class="title">
-					<tr>
 						<td>
 							<p>{{ $question->id }}</p>
 						</td>
@@ -32,21 +39,22 @@
 						<td>
 							<p>{{ $question->created_at }}</p>
 						</td>
-					</tr>
 				</tr>
-
-				<tr class="content" style="display:none">
-					<td colspan=4>
-						<p>$question->content</p>
-						
-							<button class="btn-delete" >
-								삭제
-							</button>
-						
+				
+				<tr name="content" data-toggle="toggle">
+					<td colspan="4">
+						<p>{{ $question->content }}</p>
+						@auth
+							@if ( Auth::user()->admin == 1 )
+								<button class="btn-delete" onClick="onDeleteQuestion({{ $question->id }});">
+									삭제
+								</button>
+							@endif
+						@endauth
 					</td>
 				</tr>
 			</tbody>
 		@endforeach
 	</table>
-	
 </div>
+
