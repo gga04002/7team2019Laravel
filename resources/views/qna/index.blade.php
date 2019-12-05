@@ -41,12 +41,12 @@
 						</td>
 				</tr>
 				
-				<tr name="content" data-toggle="toggle">
+				<tr name="content">
 					<td colspan="4">
 						<p>{{ $question->content }}</p>
 						@auth
 							@if ( Auth::user()->admin == 1 )
-								<button class="btn-delete" onClick="onDeleteQuestion({{ $question->id }});">
+								<button class="btn-delete">
 									삭제
 								</button>
 							@endif
@@ -58,3 +58,7 @@
 	</table>
 </div>
 
+
+<script>
+
+</script>
