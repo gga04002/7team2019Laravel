@@ -36,7 +36,7 @@
   <ul>
       @forelse($questions as $question)
         <li>
-          <a class="choose-question" href="" style="color: #FFFFFF;"> {{ $question->title }} </a>
+          <a data-id="{{ $question->id }}" class="choose-question" href="#" style="color: #FFFFFF;"> {{ $question->title }} </a>
           <small style="color: #FFFFFF;"> by {{ $question->user->name }} </small>
         </li>
       @empty
@@ -51,40 +51,39 @@
 @endif
 <p style="text-align: center"><a href="{{ route('qna.create') }}">질문하기</a></p>
 <!-- <p style="text-align: center"><a class="save-question">질문하기</a></p> -->
-
-
 @stop
-<script>
+
 @section('script')
 <script>
-  $(document).ready(function(){
-    $.ajaxSetup({
-      header: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
-    
-    $('.choose-question').click(function(e){
-      if(confirm('글을 펼쳐서 봅니다.')){
-        var title = '{{ $question->title }}'
-        var content = '{{ $question->content }}'
+$(document).ready(function(){
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
 
-        $.ajax({
-          type: 'get',
-          url: '/ajax',
-          dataType: 'json',
-          data: '_token = <?php echo csrf_token() ?>',
-          success: function(data){
-            $('#fill-title').html(title);
-            $('#fill-content').html(content);
-          },
-          error: function(data, textStatus, errorThrown){
-            console.log(data);
-          }
-        });
+  $('.choose-question').click(function(e){
+    if(confirm('ajax로 글 보기')){
+
+      var title = '{{ $question->title }}';
+      var content = '{{ $question->content }}';
+
+      $.ajax({
+        type: 'get',
+        url: '/ajax',
+        dataType: 'json',
+        data: '_token = <?php echo csrf_token() ?>',
+        success: function(data){
+          $('#fill-title').html(title);
+          $('#fill-content').html(content);
+        },
+        error: function(data, textStatus, errorThrown){
+          console.log('data');
+        }
       });
     }
   });
-</script>
+});
 
+</script>
 @stop

@@ -149,7 +149,7 @@ class MembersController extends Controller
     }
 
     public function createMember(Request $request) {
-        // dd($request->checking);
+        dd($request->checking);
         return $request->checking;
     }
 }

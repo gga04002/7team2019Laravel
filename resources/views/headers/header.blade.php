@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <meta name="description" content="Mixtape template project">
-
+<title>{{ config('app.name', 'Laravel') }}</title>
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
@@ -47,6 +47,7 @@
   @include('sweetalert::alert')
 </head>
 <body>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <div class="super_container">
 	
@@ -106,7 +107,8 @@
 		</div>
 		
 	</header>
-    
+  <main>
+  @yield('content')
+  @yield('script')
+  </main>
 </div>
-@yield('content')
-@yield('script')

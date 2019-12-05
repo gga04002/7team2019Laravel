@@ -813,6 +813,9 @@ section
 #questions-render {
   color: #FFFFFF;
 }
+#fill-title, #fill-content{
+  color: #FFFFFF;
+}
 /*********************************
 7. Footer
 *********************************/
