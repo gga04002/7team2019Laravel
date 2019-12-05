@@ -1,8 +1,15 @@
-@extends('../layouts/app')
+@extends('headers.header')
 
+<!--
 @section('content')
 
     <form action="{{ route('qna.store')}}" method="POST">
+<<<<<<< HEAD
+=======
+        @csrf
+-->
+    <form class="member_form" action="{{ route('qna.store')}}" method="POST">
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
         {!! csrf_field() !!}
 
         <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
@@ -22,6 +29,3 @@
         </div>
 
     </form>
-
-
-@stop

@@ -12,7 +12,11 @@ body {
     top: 20%;
     margin: auto;
     width: 340px;
+<<<<<<< HEAD
     height: 60%;
+=======
+    height: 70%;
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
     border-radius: 0.35em;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -30,6 +34,21 @@ body {
     text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+#container-password-reset {
+    background-color: #1D1F20;
+    position: relative;
+    top: 20%;
+    margin: auto;
+    width: 340px;
+    height: 30%;
+    border-radius: 0.35em;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 #title {
     position: relative;
     background-color: #1A1C1D;
@@ -163,6 +182,10 @@ input[type=email]:focus {
 }
 
 input[type=submit] {
+<<<<<<< HEAD
+=======
+    margin-top: 5%;
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
     padding: 6px 25px;
     background: #373E4A;
     color: #C1C3C6;
@@ -204,4 +227,23 @@ input[type=submit] {
     border: 0 none;
     cursor: pointer;
     border-radius: 3px;   
+<<<<<<< HEAD
 }
+=======
+}
+
+.Github_Button{
+    width: 70%;
+    height: 10%;
+    margin: auto;
+    padding: 4%;
+    background: #373E4A;
+    border-radius: 3px;  
+    text-align: center;
+}
+
+
+.Github_Button strong{
+    color: #C1C3C6;
+}
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f

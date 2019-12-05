@@ -1,6 +1,11 @@
 @extends ('headers.header')
 
+<<<<<<< HEAD
 	<!-- Home -->
+=======
+<body>
+<!-- Home -->
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 
 	<div class="home">
 		<div class="home_slider_container">
@@ -54,6 +59,7 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
@@ -68,6 +74,12 @@
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="plugins/jPlayer/jquery.jplayer.min.js"></script>
 <script src="plugins/jPlayer/jplayer.playlist.min.js"></script>
+=======
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 <script src="js/custom.js"></script>
 </body>
 </html>

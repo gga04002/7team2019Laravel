@@ -34,7 +34,11 @@ class AddForeignToQuestionsTable extends Migration
     public function down()
     {
         Schema::table('questions', function (Blueprint $table) {
+<<<<<<< HEAD
             $table->dropForeign('questions_user_email_foreign');
+=======
+            $table->dropForeign('questions_user_id_foreign');
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
         });
     }
 }

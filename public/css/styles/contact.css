@@ -139,7 +139,11 @@ h1, h2, h3, h4, h5, h6
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+<<<<<<< HEAD
 	line-height: 1.2;
+=======
+	/* line-height: 1.2; */
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 }
 h1::selection, 
 h2::selection, 
@@ -638,10 +642,18 @@ section
 	white-space: nowrap;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 /*********************************
 6. Contact
 *********************************/
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 .contact
 {
 	padding-top: 101px;
@@ -651,12 +663,19 @@ section
 {
 	font-size: 36px;
 	color: #FFFFFF;
+<<<<<<< HEAD
 	line-height: 1.2;
+=======
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 }
 .contact_form
 {
 	display: block;
+<<<<<<< HEAD
 	width: 100%;
+=======
+	width: 50%;
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 	margin-top: 59px;
 }
 .contact_input
@@ -752,9 +771,30 @@ section
 }
 .contact_info_list
 {
+<<<<<<< HEAD
 	margin-top: 84px;
 	padding-left: 13px;
 }
+=======
+	margin-top: 100px;
+	padding-left: 13px;
+}
+
+/* 이혜진 추가 스타일 */
+.contact_info_list h1{
+  color: #FFFFFF;
+}
+
+.right-side {
+  padding-right: 13px;
+}
+
+.right-side hr{
+  border: solid 1px #FFFFFF;
+  width: 100%;
+}
+
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 .contact_info_list ul li
 {
 	font-size: 16px;
@@ -790,6 +830,19 @@ section
 	color: #FFFFFF;
 }
 
+<<<<<<< HEAD
+=======
+/* 이혜진 추가 스타일 */
+.right-side h1 ul li small{
+  color: #FFFFFF;
+}
+#questions-render {
+  color: #FFFFFF;
+}
+#fill-title, #fill-content{
+  color: #FFFFFF;
+}
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 /*********************************
 7. Footer
 *********************************/
@@ -911,4 +964,8 @@ section
 	font-size: 14px;
 	color: #6d6d6d;
 	line-height: 67px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 74462ce51bade993820781d875c9188a3185fc4f

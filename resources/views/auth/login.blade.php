@@ -71,6 +71,12 @@
         </div>
     </form>
 
+    <div class="Github_Button">
+        <a href="{{ route('social.login',['github']) }}">
+            <img src="images/github.png" width="30px" height="30px"></i> <strong>Github 계정으로 로그인하기 </strong>
+        </a>
+    </div>
+
     <div class="register">
         Don't have an account yet?
         <a href="{{ route('register') }}"><button id="register-link">Register here</button></a>
