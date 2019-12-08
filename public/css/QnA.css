@@ -9,12 +9,13 @@
  .table-container th h1 {
        font-weight: bold;
        font-size: 1em;
-       text-align: left;
+       text-align: center;
        color: #DDDDDD;
+       padding-top: 2%;
  }
  
 
- .btn-submit , #btn-delete, #comment_button{
+ .btn-submit , .btn-delete, #comment_button{
       float: right;
       display: block;
       padding: 0 5px;
@@ -24,12 +25,12 @@
       background: -webkit-linear-gradient(top, rgb(0,37,103) 0%,rgb(0,87,166) 50%,rgb(0,74,152) 51%,rgb(75,135,182) 100%);
       border: 1px solid slategray;
       color: #EEEEEE;
-      height: 37px;
-      line-height: 37px;
+      height: 20px;
+      line-height: 20px;
       margin: 1%;
       margin-left: 2%;
       margin-right: 2%;
-      font-size: 30px
+      font-size: 18px
     }
 
  .table-container td {
@@ -50,6 +51,7 @@
        padding: 0 0 1% 0;
        font-weight: bold;
        font-size: 24px;
+       text-align: center;
  }
  
  .table-container td, .table-container th {
@@ -130,6 +132,13 @@
    transition-timing-function: line;
  }
  
+  .question-list {
+   padding-top: 2%;
+   font-size: 1em;
+   text-align: center;
+   color: #DDDDDD;
+ }
+
  @media (max-width: 800px) {
  .table-container td:nth-child(4),
  .table-container th:nth-child(4) { display: none; }
@@ -156,6 +165,24 @@
       text-align: center;
  }
 
- [data-toggle="toggle"] {
-	display: none;
+
+#CreateQuestionDIV{
+      background-color:gray; 
+      position:fixed;
+      margin:auto;
+}
+
+label,h5 {
+      color:#000000;
+}
+
+
+.form-group input,textarea {
+      background: #000a12;
+      color: #db5246;
+}
+
+.form-group input,textarea:focus {
+      background: #495057;
+      color: #db5246;
 }

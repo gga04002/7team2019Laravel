@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 <<<<<<< HEAD
+use Vaildator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+=======
+<<<<<<< HEAD
 // use Illuminate\Http\Request;
 =======
 use Illuminate\Http\Request;
 >>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
+>>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
 use App\Http\Requests\MembersRequest;
+use App\Member;
+use Datatables;
 
 class MembersController extends Controller
 {
@@ -19,18 +27,18 @@ class MembersController extends Controller
     public function index()
     {
         $members = \App\Member::get();
-
+        
         return view('members.index', compact('members'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('members.create');
+        return $request;
     }
 
     /**
@@ -41,8 +49,31 @@ class MembersController extends Controller
      */
     // 타입형을 Request 클래스 경로로 바꾸어준다
     // \App\Http\Requests\MembersRequest
-    public function store(MembersRequest $request)
+    public function store(Request $request)
     {
+<<<<<<< HEAD
+        if($request->has('img')) {
+            $image = $request->file("img");
+            $filename = Str::random(15).filter_var($image->getClientOriginalName(),FILTER_SANITIZE_URL);
+            $image->move(public_path('img'),$filename);
+
+            $members = \App\Member::create([
+                'name'=>$request->name,
+                'address'=>$request->address,
+                'phone_number'=>$request->phone_number,
+                'mottoes'=>$request->mottoes,
+                'img'=>$filename,
+            ]); 
+        } 
+        else {
+            $members = \App\Member::create([
+                'name'=>$request->name,
+                'address'=>$request->address,
+                'phone_number'=>$request->phone_number,
+                'mottoes'=>$request->mottoes,
+                'img'=>null,
+            ]); 
+=======
         /* $rules = [
             // 이름, 폰번호, 모토 유효성 검사 규칙
             'name' => ['required'],
@@ -89,10 +120,18 @@ class MembersController extends Controller
 
         if ($validator->fails()) {
             return back()->with('flash_message', '글이 저장되지 않았습니다.')->withInput();
+>>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
         }
+        
+        
 
+<<<<<<< HEAD
+        return $members;
+        
+=======
         return redirect(route('members.index'))->with('flash_message', '작성하신 글이 저장되었습니다.'); */
 >>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
+>>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
     }
 
     /**
@@ -101,9 +140,11 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        
+        $member = \App\Member::where('id', '=', $id)->get();
+
+        return $member;
     }
 
     /**
@@ -112,9 +153,9 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        return view('members.edit');
+        
     }
 
     /**
@@ -126,7 +167,32 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // if($request->has('img')) {
+            $image = $request->file("img");
+            $filename = Str::random(15).filter_var($image->getClientOriginalName(),FILTER_SANITIZE_URL);
+            $image->move(public_path('img'),$filename);
+
+            \App\Member::where('id', '=', $id)->update([
+                'name'=>$request->name,
+                'address'=>$request->address,
+                'phone_number'=>$request->phone_number,
+                'mottoes'=>$request->mottoes,
+                'img'=>$filename,
+            ]);
+        /* }
+        else {
+            \App\Member::where('id', '=', $id)->update([
+                'name'=>$request->name,
+                'address'=>$request->address,
+                'phone_number'=>$request->phone_number,
+                'mottoes'=>$request->mottoes,
+                'img'=>null,
+            ]);
+        } */
+
+        
+
+        return $request;
     }
 
     /**
@@ -137,22 +203,21 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
+<<<<<<< HEAD
+        \App\Member::find($id)->delete();
+=======
         //
     }
 <<<<<<< HEAD
 =======
+>>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
 
-    function members()
-    {
-        $data = DB::table('members')->get();
-
-        return $data;
+        return response($id);
     }
 
-    public function test(Request $request) {
-        return $request->test;
-    }
-
+<<<<<<< HEAD
+}
+=======
     public function ajaxtest(Request $request) {
         return $request->test;
     }
@@ -163,3 +228,4 @@ class MembersController extends Controller
     }
 >>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 }
+>>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d

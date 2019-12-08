@@ -18,6 +18,15 @@ class DatabaseSeeder extends Seeder
         App\User::truncate();
         $this->call(UsersTableSeeder::class);
 
+        App\Question::truncate();
+        $this->call(QuestionsTableSeeder::class);
+
+        App\Japan::truncate();
+        $this->call(JapansTableSeeder::class);
+
+        App\Answer::truncate();
+        $this->call(AnswersTableSeeder::class);
+
         if(config('database.default') !== 'sqlite'){
           DB::statement('SET FOREIGN_KEY_CHECKS=1');
         }

@@ -37,3 +37,5 @@ class AddForeignToAnswersTable extends Migration
         });
     }
 }
+
+
