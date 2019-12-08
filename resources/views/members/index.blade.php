@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-@extends('../layouts/app')
-
-@section('content')
-
-    <ul>
-        <h1 style="text-align: center">이 곳은 현지 조원소개 페이지 입니다.</h1>
-        @forelse($members as $member)
-            <li>{{ $member }}</li>
-        @empty
-            <p>조원이 등록되지 않았습니다.</p>
-        @endforelse
-        <p style="text-align: center"><a href="{{ route('members.create') }}">멤버 자료 추가</a></p>
-    </ul>
-=======
 @extends ('headers.header')
 
 @section('content')
@@ -52,7 +37,6 @@
 
 			</div>
 		</div>
-<<<<<<< HEAD
    </div>
    
 <!-- 구분 -->
@@ -86,7 +70,7 @@
       
       
    </div>
-   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+   <!-- <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> -->
    <script type="text/javascript">
       $(document).ready(function() {
 
@@ -355,174 +339,4 @@
 
 
    
-=======
-	</div>
-</div>
-
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/* $('#ajaxtest').submit(function() {
-				var a = 0;
-
-				$.ajax({
-					headers:{
-						'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-					},
-					type: "POST",
-					url: "",
-					data: {
-						"_token": "{{ csrf_token() }}",
-					},
-					success: function(data) {
-						console.log(data);
-						// $('#postRequestData').html(data);
-					}
-				});
-			}); */
-
-			/* $('#createMemeber').click(function() {
-				console.log('click');
-				var createHTML = document.createElement("div");
-
-				createHTML.id = "create";
-				createHTML.className = "col-xl-4 col-md-6";
-				createHTML.innerHTML = "테스트";
-				
-				$.ajax({
-					headers:{
-						'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-					},
-					type: "GET",
-					url: "ajaxtest",
-					data: {
-						"_token": "{{ csrf_token() }}",
-						create: craeteHTML,
-					},
-					success: function(data) {
-						console.log(data);
-						// $('#postRequestData').html(data);
-					}
-				});
-			}); */
-
-			$('#testbutton').click(function() {
-				console.log('click');
-
-				var testval = "테스트 데이터";
-
-				$.ajax({
-					headers:{
-						'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-					},
-					type: "POST",
-					url: "ajaxtest",
-					data: {
-						"_token": "{{ csrf_token() }}",
-						test: testval,
-					},
-					success: function(data) {
-						console.log("data: ", data);
-						// $('#postRequestData').html(data);
-					}
-				});
-			});
-
-			// 불렀는지 유무
-			// 전역변수
-			var called = false;
-			var count = 0;
-			var createDiv = document.getElementById('createDiv');
-
-			// 멤버 추가 버튼 생성 함수
-			function createHTML() {
-				
-				var nameInputSpace = document.createElement('input');
-				nameInputSpace.type = "text";
-				nameInputSpace.name = "name";
-				nameInputSpace.id = "name";
-				nameInputSpace.value = "{!! old('name') !!}";
-
-				var submitButton = document.createElement('button');
-				submitButton.type = "submit";
-				submitButton.name = "addMember";
-				submitButton.id = "addMember";
-				submitButton.innerHTML = "조원추가";
-
-				var html = $(`<input type="text" name="phone_number" id="phone_number" value="{!! old('phone_number') !!}"><input type="text" name="address" id="address" value="{!! old('address') !!}"><input type="text" name="mottoes" id="mottoes" value="{!! old('mottoes') !!}">`);
-
-				console.log("nameInputSpace:", nameInputSpace);
-
-				createDiv.append(nameInputSpace);
-				createDiv.append(html);
-				createDiv.append(submitButton);
-
-				console.log(count);
-
-				called=false;
-			}
-
-			$('#create').click(function() {
-				console.log('createMember');
-				called = true;
-				var check = false;
-
-				if(called) {
-					check = true;
-				}
-
-				$.ajax({
-					headers:{
-						'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-					},
-					type: "POST",
-					url: "createMember",
-					contentType: false,
-					processData: false,
-					data: {
-						"_token": "{{ csrf_token() }}",
-						checking: check,
-					},
-					success: function(data) {
-						console.log("data: ", data);
-						count++;
-						console.log(count);
-						if(data && count % 2 == 1) {
-							createHTML();
-						} else {
-							createDiv.innerHTML = "";
-						}
-						// $('#postRequestData').html(data);
-					}
-				});
-			});
-
-			$('#addMember').click(function() {
-				var name = $('#name').val();
-
-				console.log("name:",name);
-				
-				formData = new FormData()
-				$.ajax({
-					headers:{
-						'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-					},
-					type: "POST",
-					url: "addMember",
-					contentType: false,
-					processData: false,
-					data: {
-						"_token": "{{ csrf_token() }}",
-						name: name,
-					},
-					success: function(data) {
-						
-					}
-				});
-			});
-
-		});
-	</script>
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
->>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
 @stop

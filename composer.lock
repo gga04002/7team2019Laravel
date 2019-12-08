@@ -1105,8 +1105,6 @@
                 "laravel"
             ],
             "time": "2019-11-26T15:33:08+00:00"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "laravel/socialite",
@@ -1171,7 +1169,6 @@
                 "oauth"
             ],
             "time": "2019-11-26T17:39:15+00:00"
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
         },
         {
             "name": "laravel/tinker",
@@ -2066,8 +2063,6 @@
                 "shell"
             ],
             "time": "2019-11-27T22:44:29+00:00"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "ralouphie/getallheaders",
@@ -2108,7 +2103,6 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2019-03-08T08:55:37+00:00"
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
         },
         {
             "name": "ramsey/uuid",

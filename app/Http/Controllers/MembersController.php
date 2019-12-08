@@ -2,17 +2,9 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use Vaildator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-=======
-<<<<<<< HEAD
-// use Illuminate\Http\Request;
-=======
-use Illuminate\Http\Request;
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
->>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
 use App\Http\Requests\MembersRequest;
 use App\Member;
 use Datatables;
@@ -51,7 +43,6 @@ class MembersController extends Controller
     // \App\Http\Requests\MembersRequest
     public function store(Request $request)
     {
-<<<<<<< HEAD
         if($request->has('img')) {
             $image = $request->file("img");
             $filename = Str::random(15).filter_var($image->getClientOriginalName(),FILTER_SANITIZE_URL);
@@ -73,65 +64,12 @@ class MembersController extends Controller
                 'mottoes'=>$request->mottoes,
                 'img'=>null,
             ]); 
-=======
-        /* $rules = [
-            // 이름, 폰번호, 모토 유효성 검사 규칙
-            'name' => ['required'],
-            'phone_number' => ['required'],
-            'address' => ['required'],
-            'motto' => ['required', 'min:10'],
-        ];
-
-        $messages = [
-            'name.required' => '이름은 필수 입력 항목입니다.',
-            'phone_number.required' => '전화번호는 필수 입력 항목입니다.',
-            'address' => '주소는 필수 입력 항목입니다.',
-            'motto.required' => '모토는 필수 입력 항목입니다.',
-            'motto.min' => '본문은 최소 :min 글자 이상이 필요합니다.',
-        ];
-
-        $this->validate($request, $rules, $messages);
-
-        $validator = \Validator::make($request->all(), $rules, $messages);
-
-        if($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
-        } */
-
-        // $validated = $request->validated();
-        
-
-        $members = \App\Member::create($request->all()); 
-
-        if(!$members) {
-            return back()->with('flash_message', '글이 저장되지 않았습니다.')->withInput();
-        }
-
-        return redirect(route('members.index'))->with('flash_message', '작성하신 글이 저장되었습니다.');
-<<<<<<< HEAD
-=======
-
-        /* $validator = Validator::make($request->all(), [
-            'name' => 'required|max:10',
-            'phone_number' => 'required|max:13',
-            'motto' => 'required|min:10',
-            'address' => 'required|max:255',
-        ]);
-
-        if ($validator->fails()) {
-            return back()->with('flash_message', '글이 저장되지 않았습니다.')->withInput();
->>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
         }
         
         
 
-<<<<<<< HEAD
         return $members;
         
-=======
-        return redirect(route('members.index'))->with('flash_message', '작성하신 글이 저장되었습니다.'); */
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
->>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
     }
 
     /**
@@ -203,29 +141,9 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
-<<<<<<< HEAD
         \App\Member::find($id)->delete();
-=======
-        //
-    }
-<<<<<<< HEAD
-=======
->>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d
 
         return response($id);
     }
 
-<<<<<<< HEAD
 }
-=======
-    public function ajaxtest(Request $request) {
-        return $request->test;
-    }
-
-    public function createMember(Request $request) {
-        dd($request->checking);
-        return $request->checking;
-    }
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
-}
->>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d

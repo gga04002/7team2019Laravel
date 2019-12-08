@@ -1408,9 +1408,6 @@ section
     margin-top: 20%;
 	text-align: center;
 	color: #ffffff;
-<<<<<<< HEAD
-  }
-=======
   }
 
 input[type=text] {
@@ -1449,7 +1446,6 @@ a.button3{
 	transition: all 0.2s;
 	}
 a.button3:hover{
-<<<<<<< HEAD
 	background-color:#4095c6;
 }
 
@@ -1457,14 +1453,3 @@ ul li {
 	color:#FFFFFF;
 	font-size:14px;
 }
-=======
-	 background-color:#4095c6;
-	}
-@media all and (max-width:30em){
-	 a.button3{
-	  	display:block;
-	  	margin:0.2em auto;
-	 }
-}
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
->>>>>>> a077441a027777cee9ef9718f53ffba0fb7eae1d

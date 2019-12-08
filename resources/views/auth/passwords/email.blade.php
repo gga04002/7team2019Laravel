@@ -10,11 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<<<<<<< HEAD
-<div id="container-login">
-=======
 <div id="container-password-reset">
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
     <div id="title">
         <i class="material-icons lock">lock</i> 비밀번호 찾기
     </div>
@@ -25,11 +21,7 @@
             <div class="input-addon">
                 <i class="material-icons">face</i>
             </div>
-<<<<<<< HEAD
-            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-=======
             <input id="email" type="email" placeholder="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
->>>>>>> 74462ce51bade993820781d875c9188a3185fc4f
 
             @error('email')
                 <span class="invalid-feedback" role="alert">
